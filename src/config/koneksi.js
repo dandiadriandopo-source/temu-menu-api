@@ -1,14 +1,10 @@
-const { Sequelize } = require("sequelize");
-const config = require("./database.js").development;
-
-const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  {
-    host: config.host,
-    dialect: config.dialect,
+const sequelize = new Sequelize(process.env.MYSQL_URL, {
+  dialect: "mysql",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   },
-);
-
-module.exports = sequelize;
+  logging: false,
+});
