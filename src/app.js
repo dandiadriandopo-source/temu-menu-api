@@ -12,7 +12,7 @@ const routerAct = require("./app/activity/router");
 const routerAuth = require("./app/auth/router");
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
