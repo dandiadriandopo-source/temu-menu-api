@@ -12,4 +12,5 @@ const sequelize = new Sequelize(process.env.MYSQL_URL, {
   logging: false,
 });
 
+console.log("MYSQL_URL:", process.env.MYSQL_URL);
 module.exports = sequelize;
