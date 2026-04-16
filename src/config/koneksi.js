@@ -7,6 +7,7 @@ const sequelize = new Sequelize(process.env.MYSQL_URL, {
       require: true,
       rejectUnauthorized: false,
     },
+    connectTimeout: 10000,
   },
   logging: false,
 });
