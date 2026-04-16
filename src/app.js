@@ -49,6 +49,18 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server berjalan di port ${PORT}`);
-});
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("DB Connected 🚀");
+
+    return sequelize.sync({ alter: true });
+  })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server berjalan di port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("DB Error:", err);
+  });
