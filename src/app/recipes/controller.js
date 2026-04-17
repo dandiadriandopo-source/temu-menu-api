@@ -18,7 +18,7 @@ const createNewRecipes = async (req, res) => {
     let url = null;
     let image = null;
     if (req.file) {
-      url = `https://temu-menu-api.onrender.com/${req.file.path.split("/")[7]}`;
+      url = `https://temu-menu-api.onrender.com/uploads/${req.file.path.split("/")[7]}`;
       image = req.file.path.split("/")[6];
     }
 
@@ -69,7 +69,7 @@ const editRecipeById = async (req, res) => {
     let url = null;
     let image = null;
     if (req.file) {
-      url = `https://temu-menu-api.onrender.com/${req.file.path.split("/")[7]}`;
+      url = `https://temu-menu-api.onrender.com/uploads/${req.file.path.split("/")[7]}`;
       image = req.file.path.split("/")[6];
     }
 
