@@ -23,7 +23,7 @@ const regUser = async (req, res) => {
 
     let profil = null;
     if (req.file) {
-      profil = req.file.path.split("/")[6];
+      profil = req.file.path.split("/")[7];
     }
 
     const body = {
@@ -81,7 +81,7 @@ const editUserById = async (req, res) => {
 
     let newProfil = null;
     if (req.file) {
-      newProfil = req.file.path.split("/")[6];
+      newProfil = req.file.path.split("/")[7];
     }
 
     if (newProfil) {
