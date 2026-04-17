@@ -16,7 +16,7 @@ const createNewSteps = async (req, res) => {
 
     let step_image = null;
     if (req.file) {
-      step_image = req.file.path.split("/")[10];
+      step_image = req.file.path.split("/")[6];
     }
 
     const body = {
@@ -55,7 +55,7 @@ const editStepById = async (req, res) => {
 
     let step_image = null;
     if (req.file) {
-      step_image = req.file.path.split("/")[10];
+      step_image = req.file.path.split("/")[6];
     }
 
     const isStepsExist = await existStepsId(id);
