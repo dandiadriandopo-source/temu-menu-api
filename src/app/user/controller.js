@@ -37,7 +37,7 @@ const regUser = async (req, res) => {
     };
 
     const data = await createNewUser(body);
-    return resSuccess(res, 201, "success", "User berhasil dibuat", data);
+    return resSuccess(res, 201, "success", "User berhasil dibuat", req.file);
   } catch (error) {
     return resFailed(res, 500, "error", error.message);
   }
