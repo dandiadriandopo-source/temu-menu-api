@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const path = require("path");
 const fs = require("fs");
+const cors = require("cors");
 const express = require("express");
 const sequelize = require("./config/koneksi");
 const routerUser = require("./app/user/router");
