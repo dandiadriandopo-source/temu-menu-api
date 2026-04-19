@@ -2,7 +2,7 @@ const express = require("express");
 const { Addrating, findAllRate } = require("./controller");
 const routerRate = express.Router();
 
-routerRate.post("/", Addrating);
-routerRate.get("/", findAllRate);
+routerRate.post("/", authJwt, authorizeRole("admin"), Addrating);
+routerRate.get("/", authJwt, authorizeRole("admin"), findAllRate);
 
 module.exports = routerRate;

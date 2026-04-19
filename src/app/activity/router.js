@@ -9,7 +9,7 @@ routerAct.get(
   authorizeRole("pelanggan", "admin"),
   getAllActByUserId,
 );
-routerAct.post("/:id/like", likeAct);
-routerAct.post("/:id/save", saveAct);
+routerAct.post("/:id/like", authJwt, authorizeRole("admin"), likeAct);
+routerAct.post("/:id/save", authJwt, authorizeRole("admin"), saveAct);
 
 module.exports = routerAct;

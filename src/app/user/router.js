@@ -8,9 +8,21 @@ const {
 const upload = require("../../shared/middlewares/upload/upload");
 const routerUser = express.Router();
 
-routerUser.post("/", upload.single("profil"), regUser);
-routerUser.get("/", findAllUser);
-routerUser.patch("/:id", upload.single("profil"), editUserById);
-routerUser.delete("/:id", dropUserById);
+routerUser.post(
+  "/",
+  authJwt,
+  authorizeRole("pelanggan", "admin"),
+  upload.single("profil"),
+  regUser,
+);
+routerUser.get("/", authJwt, authorizeRole("pelanggan", "admin"), findAllUser);
+routerUser.patch(
+  "/:id",
+  authJwt,
+  authorizeRole("pelanggan", "admin"),
+  upload.single("profil"),
+  editUserById,
+);
+routerUser.delete("/:id", authJwt, authorizeRole("admin"), dropUserById);
 
 module.exports = routerUser;
