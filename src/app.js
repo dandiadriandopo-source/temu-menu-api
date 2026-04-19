@@ -63,7 +63,7 @@ sequelize
   .then(() => {
     console.log("DB Connected 🚀");
 
-    return sequelize.sync({ alter: true });
+    return sequelize.sync();
   })
   .then(() => {
     app.listen(PORT, () => {
