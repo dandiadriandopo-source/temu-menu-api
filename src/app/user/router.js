@@ -6,6 +6,7 @@ const {
   dropUserById,
 } = require("./controller");
 const upload = require("../../shared/middlewares/upload/upload");
+const { authJwt, authorizeRole } = require("../auth/jwtAuth");
 const routerUser = express.Router();
 
 routerUser.post(

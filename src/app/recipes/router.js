@@ -6,6 +6,7 @@ const {
   dropRecipeById,
 } = require("./controller");
 const upload = require("../../shared/middlewares/upload/upload");
+const { authJwt, authorizeRole } = require("../auth/jwtAuth");
 const routerRecipes = express.Router();
 
 routerRecipes.post(
