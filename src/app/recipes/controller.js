@@ -19,7 +19,7 @@ const createNewRecipes = async (req, res) => {
     let image = null;
     if (req.file) {
       url = `https://temu-menu-api.onrender.com/uploads/${req.file.path.split("/")[7]}`;
-      image = req.file.path.split("/")[6];
+      image = req.file.path.split("/")[7];
     }
 
     const body = {
@@ -70,7 +70,7 @@ const editRecipeById = async (req, res) => {
     let image = null;
     if (req.file) {
       url = `https://temu-menu-api.onrender.com/uploads/${req.file.path.split("/")[7]}`;
-      image = req.file.path.split("/")[6];
+      image = req.file.path.split("/")[7];
     }
 
     if (image) {
